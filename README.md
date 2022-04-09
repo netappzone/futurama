@@ -1,16 +1,42 @@
-# futurama
+# Futurama
 
-A new Flutter project.
+### Screen Shots:
+<img src="screen_shots/image1.png" width="300" height="650"> <img src="screen_shots/image2.png" width="300" height="650">
+<img src="screen_shots/image3.png" width="300" height="650"> <img src="screen_shots/image4.jpg" width="300" height="650">
 
-## Getting Started
+### Screen Recording
+<img src="screen_shots/screenrecord.gif" width="32%" />
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Follows a **feature-driven directory structure.**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Refer the project structure directly from the tutorial from 
+
+<pre>
+├── lib
+| ├── futurama
+│ │ ├── bloc
+│ │ │ └── post_bloc.dart
+| | | └── post_event.dart
+| | | └── post_state.dart
+| | | └── post_state.dart
+| | └── models
+| | | └── models.dart*
+| | | └── post.dart
+│ │ └── view
+│ │ | ├── posts_page.dart
+│ │ | └── posts_list.dart
+| | | └── view.dart*
+| | └── widgets
+| | | └── bottom_loader.dart
+| | | └── post_list_item.dart
+| | | └── widgets.dart*
+│ │ ├── posts.dart*
+│ ├── app.dart
+│ ├── simple_bloc_observer.dart
+│ └── main.dart
+├── pubspec.lock
+├── pubspec.yaml
+</pre>
