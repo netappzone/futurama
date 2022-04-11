@@ -1,71 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:futurama/futurama/constants.dart';
 
-class Options extends StatelessWidget {
+class Options extends StatefulWidget {
+  final String text;
+  // final Quiz quiz;
+  final int index;
+  // selectedPosition;
+  // final VoidCallback press;
+  // final bool isAnswered;
+  final ValueChanged<bool> isSelected;
+
   const Options({
     Key? key,
     required this.text,
     required this.index,
-    required this.press,
+    // required this.selectedPosition,
+    // required this.quiz,
+    // required this.press,
+    required this.isSelected,
+    // required this.isAnswered,
   }) : super(key: key);
-  final String text;
-  final int index;
-  final VoidCallback press;
+
+  @override
+  State<Options> createState() => _OptionsState();
+}
+
+class _OptionsState extends State<Options> {
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
-    // return
-
-    // GetBuilder<QuestionController>(
-    //     init: QuestionController(),
-    //     builder: (qnController) {
-    //       Color getTheRightColor() {
-    //         if (qnController.isAnswered) {
-    //           if (index == qnController.correctAns) {
-    //             return kGreenColor;
-    //           } else if (index == qnController.selectedAns &&
-    //               qnController.selectedAns != qnController.correctAns) {
-    //             return kRedColor;
-    //           }
-    //         }
-    //         return kGrayColor;
-    //       }
-
-    //       IconData getTheRightIcon() {
-    //         return getTheRightColor() == kRedColor ? Icons.close : Icons.done;
-    //       }
-
     return InkWell(
-      onTap: press,
+      onTap: () {
+        setState(() {
+          widget.isSelected(isSelected);
+          isSelected = !isSelected;
+        });
+      },
+
+      // checkAns(widget.quiz, widget.text, widget.selectedPosition),
+      // {()
+      //   print(widget.selectedPosition);
+      //   widget.press;
+      // },
       child: Container(
-        margin: EdgeInsets.only(top: 20),
-        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          border:
-              Border.all(color: Constants.kGreenColor), //getTheRightColor()),
-          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: Constants.kGreenColor),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "${index + 1}. $text",
-              style: TextStyle(color: Constants.kCyanColor, fontSize: 16),
+              "${widget.index + 1}. ${widget.text}",
+              style:
+                  const TextStyle(color: Constants.kWhiteColor, fontSize: 16),
             ),
-            // Container(
-            //   height: 26,
-            //   width: 26,
-            //   decoration: BoxDecoration(
-            //     color: getTheRightColor() == kGrayColor
-            //         ? Colors.transparent
-            //         : getTheRightColor(),
-            //     borderRadius: BorderRadius.circular(50),
-            //     border: Border.all(color: getTheRightColor()),
-            //   ),
-            //   child: getTheRightColor() == kGrayColor
-            //       ? null
-            //       : Icon(getTheRightIcon(), size: 16),
-            // )
+            Icon(
+                isSelected ? Icons.check_circle_outline : Icons.circle_outlined,
+                size: 20),
           ],
         ),
       ),

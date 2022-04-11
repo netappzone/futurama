@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:futurama/futurama/providers/api.dart';
+import 'package:futurama/futurama/providers/info_services.dart';
 import 'package:futurama/futurama/providers/quiz_service.dart';
 
 import 'futurama/providers/character_service.dart';
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context) => ApiServices()),
+          ChangeNotifierProvider(create: (context) => InfoServices()),
           ChangeNotifierProvider(create: (context) => CharacterServices()),
           ChangeNotifierProvider(create: (context) => QuizServices()),
         ],

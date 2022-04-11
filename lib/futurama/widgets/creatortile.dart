@@ -29,9 +29,8 @@ class _CreatorTileState extends State<CreatorTile> {
         setState(() => isLoading = false);
       },
       child: Container(
-        width: MediaQuery.of(context).size.width / 2.8,
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         decoration: Constants.outerDecorationService(
             10, Constants.kGreenColor.withOpacity(0.1)),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -46,7 +45,7 @@ class _CreatorTileState extends State<CreatorTile> {
                 )
               : Text(
                   widget.creator.name,
-                  style: Theme.of(context).textTheme.subtitle1!.merge(
+                  style: Theme.of(context).textTheme.bodyText1!.merge(
                       const TextStyle(
                           color: Constants.kWhiteColor,
                           fontWeight: FontWeight.bold)),

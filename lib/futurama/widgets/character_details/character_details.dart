@@ -79,8 +79,7 @@ class CharacterDetails extends StatelessWidget {
                           List.generate(character.sayings.length, (index) {
                         var creator = character.sayings.elementAt(index);
                         return Text(
-                          creator.trim(),
-                          // " \"$creator.s\"",
+                          "\"$creator\"",
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.bodyText2,
                         );

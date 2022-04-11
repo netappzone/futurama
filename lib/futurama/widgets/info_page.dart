@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futurama/futurama/providers/api.dart';
+import 'package:futurama/futurama/providers/info_services.dart';
 import 'package:provider/provider.dart';
 
 import 'info_tile.dart';
@@ -9,10 +9,10 @@ class InfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final infoList = Provider.of<ApiServices>(context);
+    final infoList = Provider.of<InfoServices>(context);
 
     return FutureBuilder(
-        future: Provider.of<ApiServices>(context).getInfo(),
+        future: Provider.of<InfoServices>(context).getInfo(),
         builder: (context, snapshot) {
           if (infoList.infos.isEmpty) {
             return SizedBox(

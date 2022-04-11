@@ -113,7 +113,7 @@ class QuizPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const QuizList()
+              const SafeArea(top: false, child: QuizList())
             ])));
   }
 }

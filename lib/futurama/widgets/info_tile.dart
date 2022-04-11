@@ -4,6 +4,10 @@ import '../constants.dart';
 import '../models/info_model.dart';
 import 'creatortile.dart';
 
+final TextEditingController newVoiceText = TextEditingController(
+    text:
+        'Hello, this is is Futurama app. Futurama was aired between 1999 and 2013. It was created by David X. Cohen and Matt Groening');
+
 class InfoTile extends StatelessWidget {
   final Info info;
   const InfoTile({Key? key, required this.info}) : super(key: key);
@@ -59,16 +63,13 @@ class InfoTile extends StatelessWidget {
           height: 20,
         ),
         Container(
-          height: 80,
-          alignment: Alignment.center,
-          child: ListView(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              children: List.generate(info.creators.length, (index) {
-                var creator = info.creators.elementAt(index);
-                return CreatorTile(creator: creator);
-              })),
-        ),
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: info.creators.map((opt) {
+                return CreatorTile(creator: opt);
+              }).toList(),
+            )),
         const SizedBox(
           height: 20,
         ),

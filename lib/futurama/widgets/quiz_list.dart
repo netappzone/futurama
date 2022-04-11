@@ -12,7 +12,7 @@ class QuizList extends StatefulWidget {
 
 class _QuizListState extends State<QuizList> {
   PageController? _pageController;
-  bool _isAnswered = false;
+  int currentPagePosition = 0;
 
   @override
   void initState() {
@@ -25,17 +25,6 @@ class _QuizListState extends State<QuizList> {
     _pageController!.dispose();
     super.dispose();
   }
-
-  // void nextQuestion() {
-  //   if (widget.index != widget.total) {
-  //     _isAnswered = false;
-  //     _pageController!.nextPage(
-  //         duration: const Duration(milliseconds: 250), curve: Curves.ease);
-  //   } else {
-  //     // Get package provide us simple way to naviigate another page
-  //     // Get.to(ScoreScreen());
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,36 +42,22 @@ class _QuizListState extends State<QuizList> {
             );
           } else {
             return PageView.builder(
-                // Block swipe to next qn
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _pageController,
-                // onPageChanged: updateTheQnNum,
+                onPageChanged: (position) {
+                  currentPagePosition = position;
+                },
                 itemCount: quizList.quiz.length,
                 itemBuilder: (context, index) {
                   var _quiz = quizList.quiz.elementAt(index);
+
                   return QuizTile(
-                      quiz: _quiz, index: index, total: quizList.quiz.length);
+                      quiz: _quiz,
+                      index: index,
+                      total: quizList.quiz.length,
+                      pageController: _pageController);
                 });
-
-            // ListView.builder(
-            //   physics: const ScrollPhysics(),
-            //   padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
-            //   shrinkWrap: true,
-            //   itemCount: quizList.quiz.length,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     var _quiz = quizList.quiz.elementAt(index);
-
-            //     return QuizTile(
-            //         quiz: _quiz, index: index, total: quizList.quiz.length);
-            //   },
-            // );
           }
         });
-  }
-
-  void updateTheQnNum(int i) {
-    setState(() {
-      // 5 = i;
-    });
   }
 }

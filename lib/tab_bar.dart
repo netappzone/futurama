@@ -8,6 +8,8 @@ import 'futurama/constants.dart';
 import 'futurama/views/character.dart';
 import 'futurama/views/quiz.dart';
 
+enum TtsState { playing, stopped, paused, continued }
+
 class TabBarPage extends StatefulWidget {
   const TabBarPage({Key? key}) : super(key: key);
 
@@ -18,10 +20,9 @@ class TabBarPage extends StatefulWidget {
 class _TabBarPageState extends State<TabBarPage> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
+    const HomePage(),
     CharacterPage(),
     QuizPage(),
-    Container(),
   ];
 
   void _onItemTapped(int index) {
@@ -38,49 +39,6 @@ class _TabBarPageState extends State<TabBarPage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      floatingActionButton: Container(
-        height: 64,
-        width: 64,
-        padding: const EdgeInsets.all(4),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Constants.kPinkColor.withOpacity(0.2),
-              Constants.kGreenColor.withOpacity(0.2)
-            ],
-          ),
-        ),
-        child: Container(
-          height: 60,
-          width: 60,
-          padding: const EdgeInsets.all(4),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Constants.kPinkColor,
-                Constants.kGreenColor,
-              ],
-            ),
-          ),
-          child: RawMaterialButton(
-            onPressed: () {},
-            shape: const CircleBorder(),
-            fillColor: const Color(0xff404c57),
-            child: SvgPicture.asset(
-              Constants.kIconMic,
-              height: 30,
-              // color: Colors.black,
-            ),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: GlassmorphicContainer(
         width: MediaQuery.of(context).size.width,
         height: 60,
@@ -128,13 +86,6 @@ class _TabBarPageState extends State<TabBarPage> {
               ),
               activeColor: Constants.kCyanColor,
               title: const Text('Quiz'),
-            ),
-            BottomBarItem(
-              icon: SvgPicture.asset(
-                Constants.kIconDownload,
-              ),
-              activeColor: Constants.kCyanColor,
-              title: const Text('Settings'),
             ),
           ],
         ),

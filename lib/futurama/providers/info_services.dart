@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../models/info_model.dart';
 
-class ApiServices extends ChangeNotifier {
+class InfoServices extends ChangeNotifier {
   final _baseUrl = 'https://api.sampleapis.com/futurama/';
   List<Info> _infos = [];
   List<Info> get infos => _infos;
