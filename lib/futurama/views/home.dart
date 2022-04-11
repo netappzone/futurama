@@ -121,6 +121,7 @@ class _HomePageState extends State<HomePage> {
         ]),
         centerTitle: true,
         backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
         elevation: 0,
       ),
       body: SizedBox(
