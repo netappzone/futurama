@@ -21,6 +21,7 @@ class Constants {
   static const String kIconPlay = 'assets/svg/icon-play.svg';
   static const String kIconBack = 'assets/svg/icon-back.svg';
   static const String kIconMenu = 'assets/svg/icon-menu.svg';
+  static const String kIconCartoon = 'assets/svg/icon-char.png';
 
   // Constant Mask
   static const String kMaskFirstIndex = 'assets/mask/mask_firstIndex.png';

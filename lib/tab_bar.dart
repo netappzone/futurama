@@ -74,9 +74,8 @@ class _TabBarPageState extends State<TabBarPage> {
               title: const Text('Home'),
             ),
             BottomBarItem(
-              icon: SvgPicture.asset(
-                Constants.kIconPlayOnTv,
-              ),
+              icon: Image.asset(Constants.kIconCartoon,
+                  color: Constants.kWhiteColor, width: 30, fit: BoxFit.cover),
               activeColor: Constants.kCyanColor,
               title: const Text('Characters'),
             ),

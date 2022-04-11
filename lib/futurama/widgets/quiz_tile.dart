@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:futurama/futurama/constants.dart';
 import 'package:futurama/futurama/models/quiz_model.dart';
 import 'package:futurama/futurama/providers/quiz_service.dart';
-import 'package:futurama/futurama/widgets/score_page.dart';
 import 'package:provider/provider.dart';
 
 import 'block_button_widget.dart';
@@ -29,34 +28,13 @@ class _QuizTileState extends State<QuizTile> {
   // List<int> totalScore = [];
   // int _numOfCorrectAns = 0;
   int? pageNo;
-  bool _isCorrect = false;
+  bool isCorrect = false;
 
   @override
   void initState() {
     super.initState();
     pageNo = widget.index + 1;
-    // _numOfCorrectAns;
-    // totalScore;
   }
-
-  // void checkAns(Quiz quiz, _selectedAns, checkedOptionPosition) {
-  //   setState(() {
-  //     // _isAnswered = true;
-  //     checkedOptionPosition;
-  //     _correctAns = widget.quiz.correctAnswer;
-  //     if (_correctAns == _selectedAns) {
-  //       _isCorrect = true;
-  //     }
-
-  //     print('_numOfCorrectAns $_numOfCorrectAns');
-  //     print('Tapped on: $checkedOptionPosition');
-  //     print('_isCorrect $_isCorrect');
-  //     print('_selectedAns $_selectedAns');
-  //     print('_correctAns $_correctAns');
-  //     //
-  //     // print(_correctAns == _selectedAns);
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,14 +47,9 @@ class _QuizTileState extends State<QuizTile> {
           screenHeader(),
           quizQuestion(),
           ...List.generate(widget.quiz.possibleAnswers.length, (index) {
-            // int checkedOptionPosition = widget.quiz.possibleAnswers
-            //     .indexOf(widget.quiz.possibleAnswers[index]);
-
             return Options(
               index: index,
-
               text: widget.quiz.possibleAnswers[index],
-
               isSelected: (bool value) {
                 setState(() {
                   if (value) {
@@ -85,13 +58,7 @@ class _QuizTileState extends State<QuizTile> {
                     selectedList.add(widget.quiz.possibleAnswers[index]);
                   }
                 });
-                print("$index : $value, : $selectedList");
               },
-              // isAnswered: _isAnswered,
-              // press: () {
-              //   checkAns(widget.quiz, widget.quiz.possibleAnswers[index],
-              //       checkedOptionPosition);
-              // }
             );
           }),
           const SizedBox(
@@ -136,7 +103,7 @@ class _QuizTileState extends State<QuizTile> {
                         context,
                         selectedList,
                         widget.quiz.correctAnswer,
-                        _isCorrect,
+                        isCorrect,
                         pageNo,
                         widget.total,
                         widget.pageController),
