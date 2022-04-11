@@ -70,11 +70,15 @@ samples, guidance on mobile development, and a full API reference.
 
 https://flutter.dev/
 
-To run the app:
+## To run the app:
+- update the dependencies by running `flutter pub dev`
+- use `flutter run` to run the project on your emulator
+- use `flutter build apk` to build the app
 
-- update the dependencies by running flutter pub dev
-- use flutter run to run the project on your emulator
-- use flutter build apk to build the app
+## Unit test
+- A simple unit test is created in test directory for demo purpose.
+- To execute the unit test, simply run `flutter test` in the terminal.
+
 
 
 # Project by:
