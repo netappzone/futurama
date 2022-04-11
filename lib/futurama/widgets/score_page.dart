@@ -112,7 +112,8 @@ class ScorePage extends StatelessWidget {
                   child: BlockButtonWidget(
                 onPressed: () {
                   quizProvider.reset();
-                  Navigator.push(
+                  Navigator.pop(context);
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const TabBarPage(),
