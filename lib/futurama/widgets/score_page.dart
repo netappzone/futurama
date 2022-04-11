@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:futurama/futurama/views/quiz.dart';
 import 'package:provider/provider.dart';
 
+import '../../tab_bar.dart';
 import '../constants.dart';
 import '../providers/quiz_service.dart';
 import 'block_button_widget.dart';
@@ -115,7 +115,7 @@ class ScorePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizPage(),
+                      builder: (context) => const TabBarPage(),
                     ),
                   );
                 },

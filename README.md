@@ -3,9 +3,16 @@
 ### Screen Shots:
 <img src="screen_shots/image1.png" width="300" height="650"> <img src="screen_shots/image2.png" width="300" height="650">
 <img src="screen_shots/image3.png" width="300" height="650"> <img src="screen_shots/image4.jpg" width="300" height="650">
+<img src="screen_shots/image5.jpg" width="300" height="650">
+<img src="screen_shots/image6.jpg" width="300" height="650">
+<img src="screen_shots/image7.jpg" width="300" height="650">
+<img src="screen_shots/image8.jpg" width="300" height="650">
+<img src="screen_shots/image9.jpg" width="300" height="650">
+<img src="screen_shots/image10.jpg" width="300" height="650">
+<img src="screen_shots/image11.jpg" width="300" height="650">
 
-### Screen Recording
-<img src="screen_shots/screenrecord.gif" width="32%" />
+<!-- ### Screen Recording
+<img src="screen_shots/screenrecord.gif" width="32%" /> -->
 
 
 ## Project Structure
