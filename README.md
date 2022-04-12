@@ -28,12 +28,12 @@ Below is the project's structure
 │ │ ├── models
 │ │ │ └── character_model.dart
 | | | └── creator_model.dart
-| | | └── post_simage_model.dart
+| | | └── image_model.dart
 | | | └── info_model.dart
 | | | └── name_model.dart
 | | | └── quiz_model.dart
 | | └── providers
-| | | └── character_service.dart*
+| | | └── character_service.dart
 | | | └── info_service.dart
 | | | └── quiz_service.dart
 │ │ └── views
