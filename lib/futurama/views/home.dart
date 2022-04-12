@@ -6,10 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-import '../../tab_bar.dart';
 import '../constants.dart';
 import '../widgets/info_page.dart';
-import '../widgets/info_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
