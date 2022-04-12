@@ -2,15 +2,15 @@
 
 ## Screen Shots:
 
-<img src="screen_shots/image1.png" width="512" height="947"> <img src="screen_shots/image2.png" width="512" height="947">
-<img src="screen_shots/image3.png" width="512" height="947"> <img src="screen_shots/image4.png" width="512" height="947">
-<img src="screen_shots/image5.png" width="512" height="947">
-<img src="screen_shots/image6.png" width="512" height="947">
-<img src="screen_shots/image7.png" width="512" height="947">
-<img src="screen_shots/image8.png" width="512" height="947">
-<img src="screen_shots/image9.png" width="512" height="947">
-<img src="screen_shots/image10.png" width="512" height="947">
-<img src="screen_shots/image11.png" width="512" height="947">
+<img src="screen_shots/image1.png" width="300" height="555"> <img src="screen_shots/image2.png" width="300" height="555">
+<img src="screen_shots/image3.png" width="300" height="555"> <img src="screen_shots/image4.png" width="300" height="555">
+<img src="screen_shots/image5.png" width="300" height="555">
+<img src="screen_shots/image6.png" width="300" height="555">
+<img src="screen_shots/image7.png" width="300" height="555">
+<img src="screen_shots/image8.png" width="300" height="555">
+<img src="screen_shots/image9.png" width="300" height="555">
+<img src="screen_shots/image10.png" width="300" height="555">
+<img src="screen_shots/image11.png" width="300" height="555">
 
 <!-- ### Screen Recording
 <img src="screen_shots/screenrecord.gif" width="32%" /> -->
