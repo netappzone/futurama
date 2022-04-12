@@ -9,7 +9,7 @@ class QuizServices extends ChangeNotifier {
   final _baseUrl = 'https://api.sampleapis.com/futurama/';
   List<Quiz> _quiz = [];
   List<Quiz> get quiz => _quiz;
-  int numOfCorrectAns = 0;
+  int scores = 0;
 
   Future<List<Quiz>> getQuiz() async {
     var response = await http.get(Uri.parse(
@@ -51,7 +51,7 @@ class QuizServices extends ChangeNotifier {
     if (selectedList.first == correctAnswer) {
       isCorrect = true;
     }
-    if (isCorrect == true) numOfCorrectAns++;
+    if (isCorrect == true) scores++;
 
     if (pageNo != total) {
       // _isAnswered = false;
@@ -66,7 +66,7 @@ class QuizServices extends ChangeNotifier {
   }
 
   void reset() {
-    numOfCorrectAns = 0;
+    scores = 0;
     notifyListeners();
   }
 }

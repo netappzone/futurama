@@ -26,7 +26,7 @@ class QuizTile extends StatefulWidget {
 class _QuizTileState extends State<QuizTile> {
   List<String> selectedList = [];
   // List<int> totalScore = [];
-  // int _numOfCorrectAns = 0;
+  // int _scores = 0;
   int? pageNo;
   bool isCorrect = false;
 
@@ -66,17 +66,15 @@ class _QuizTileState extends State<QuizTile> {
           ),
           if (pageNo! > 1)
             Consumer<QuizServices>(
-              builder: (context, numOfCorrectAns, child) => Row(
+              builder: (context, scores, child) => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (numOfCorrectAns.numOfCorrectAns >= 5)
+                  if (scores.scores >= 5)
                     Text(" 🏆 ", style: Theme.of(context).textTheme.headline6),
                   Text(
-                    "Score: ${numOfCorrectAns.numOfCorrectAns}/${widget.total}",
+                    "Score: ${scores.scores}/${widget.total}",
                     style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: numOfCorrectAns.numOfCorrectAns >= 3
-                            ? Colors.blue
-                            : Colors.red),
+                        color: scores.scores >= 3 ? Colors.blue : Colors.red),
                   ),
                 ],
               ),

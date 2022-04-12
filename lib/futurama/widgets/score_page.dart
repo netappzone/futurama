@@ -38,7 +38,7 @@ class ScorePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (quizProvider.numOfCorrectAns >= 5)
+                if (quizProvider.scores >= 5)
                   Text(
                     '🏆',
                     textAlign: TextAlign.center,
@@ -77,13 +77,13 @@ class ScorePage extends StatelessWidget {
                         height: 10,
                       ),
                       Consumer<QuizServices>(
-                        builder: (context, numOfCorrectAns, child) => Text(
-                            '${numOfCorrectAns.numOfCorrectAns} / $total',
+                        builder: (context, scores, child) => Text(
+                            '${scores.scores} / $total',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5!
                                 .copyWith(
-                                    color: numOfCorrectAns.numOfCorrectAns < 3
+                                    color: scores.scores < 3
                                         ? Colors.red
                                         : Colors.blue,
                                     fontWeight: FontWeight.bold)),
@@ -92,7 +92,7 @@ class ScorePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-                if (quizProvider.numOfCorrectAns >= 5)
+                if (quizProvider.scores >= 5)
                   Text(
                     '🏆',
                     textAlign: TextAlign.center,

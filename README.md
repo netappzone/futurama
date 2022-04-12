@@ -76,7 +76,10 @@ https://flutter.dev/
 - use `flutter build apk` to build the app
 
 ## Unit test
-- A simple unit test is created in test directory for demo purpose.
+By convention, the directory structure in the test directory mimics that in the lib directory and the Dart files have the same name, but appended with _test. This same convention is followed in this test directory.
+
+First, I ran a simple unit test on the reset() method in the quiz service to verify that when a user click to retake the test, the score data is reset to zero, and that the page reflects the change. 
+
 - To execute the unit test, simply run `flutter test` in the terminal.
 
 
