@@ -8,8 +8,6 @@ import 'futurama/constants.dart';
 import 'futurama/views/character.dart';
 import 'futurama/views/quiz.dart';
 
-enum TtsState { playing, stopped, paused, continued }
-
 class TabBarPage extends StatefulWidget {
   const TabBarPage({Key? key}) : super(key: key);
 

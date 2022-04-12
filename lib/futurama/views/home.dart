@@ -22,13 +22,13 @@ class _HomePageState extends State<HomePage> {
   late FlutterTts flutterTts;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  TtsState ttsState = TtsState.stopped;
-
-  get isPlaying => ttsState == TtsState.playing;
-  get isStopped => ttsState == TtsState.stopped;
+  bool isPlaying = false;
   bool get isIOS => !kIsWeb && Platform.isIOS;
   bool get isAndroid => !kIsWeb && Platform.isAndroid;
   bool get isWeb => kIsWeb;
+  final TextEditingController newVoiceText = TextEditingController(
+      text:
+          'Hello, this is is Futurama app. Futurama was aired between 1999 and 2013. It was created by David X. Cohen and Matt Groening');
 
   @override
   initState() {
@@ -41,39 +41,39 @@ class _HomePageState extends State<HomePage> {
 
     flutterTts.setStartHandler(() {
       setState(() {
-        ttsState = TtsState.playing;
+        isPlaying = true;
       });
     });
 
     flutterTts.setCompletionHandler(() {
       setState(() {
-        ttsState = TtsState.stopped;
+        isPlaying = false;
       });
     });
 
     flutterTts.setCancelHandler(() {
       setState(() {
-        ttsState = TtsState.stopped;
+        isPlaying = false;
       });
     });
 
     if (isWeb || isIOS) {
       flutterTts.setPauseHandler(() {
         setState(() {
-          ttsState = TtsState.paused;
+          isPlaying = false;
         });
       });
 
       flutterTts.setContinueHandler(() {
         setState(() {
-          ttsState = TtsState.continued;
+          isPlaying = true;
         });
       });
     }
 
     flutterTts.setErrorHandler((msg) {
       setState(() {
-        ttsState = TtsState.stopped;
+        isPlaying = false;
       });
     });
   }
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
             shape: const CircleBorder(),
             fillColor: const Color(0xff404c57),
             child: SvgPicture.asset(
-              isPlaying ? Constants.kMaskCast : Constants.kIconMic,
+              isPlaying ? Constants.kIconPlay : Constants.kIconMic,
               height: 30,
               // color: Colors.black,
             ),

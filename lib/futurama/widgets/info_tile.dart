@@ -4,10 +4,6 @@ import '../constants.dart';
 import '../models/info_model.dart';
 import 'creatortile.dart';
 
-final TextEditingController newVoiceText = TextEditingController(
-    text:
-        'Hello, this is is Futurama app. Futurama was aired between 1999 and 2013. It was created by David X. Cohen and Matt Groening');
-
 class InfoTile extends StatelessWidget {
   final Info info;
   const InfoTile({Key? key, required this.info}) : super(key: key);
